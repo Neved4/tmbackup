@@ -4,6 +4,7 @@ BEGIN { FS = ": " }
 
 function eprint(type, msg, color) {
 	color == "" && color = red
+
 	printf("%s: %s\n", color type reset, msg) > "/dev/stderr"
 }
 
@@ -26,7 +27,6 @@ function backup() {
 		}
 	}
 	close(start)
-
 	isempty = index($0, "0 bytes")
 	if (isempty > 0) {
 		mprint(up clear red, "Stopped")
@@ -36,15 +36,17 @@ function backup() {
 }
 
 function getlast() {
-	haslast = system("tmutil listbackups 2>&1 | grep 'No backups' >/dev/null")
-	if (haslast == 0) {
+	list = "tmutil listbackups 2>&1"
+	list | getline output
+	close(list)
+	if (match(output, /No backups/)) {
 		printf("\n")
-		host="uname -n"
+		host = "uname -n"
 		host | getline hostname
 		close(host)
-		eprint("Error", "Failed to find any backups for " \
+		eprint("error", "Failed to find any backups for " \
 			cyan under hostname reset)
-		eprint("Warning", "Back up this machine immediately", yellow)
+		eprint("warning", "Back up this machine immediately.", yellow)
 		exit 1
 	}
 }

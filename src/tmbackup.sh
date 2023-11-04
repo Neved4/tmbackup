@@ -3,7 +3,7 @@ set -Cefu
 
 dir="${0%/*}"
 
-for path in "$dir/os.sh" "$dir/keepalive.sh"
+for path in $dir/keepalive.sh
 do
 	# shellcheck disable=SC1090
 	[ -f "$path" ] && . "$path"
@@ -19,7 +19,7 @@ trap cleanup INT EXIT QUIT TERM
 main() {
 	cleanup
 	tmutil destinationinfo |
-		awk -f "$dir"/color.awk -f "${0%.sh}.awk"
+		awk -f "$dir"/color.awk -f "$dir"/os.awk -f "${0%.sh}.awk"
 }
 
 main "$@"
