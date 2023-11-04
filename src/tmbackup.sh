@@ -3,11 +3,23 @@ set -Cefu
 
 dir="${0%/*}"
 
-for file in "$dir/os.sh" "$dir/keepalive.sh"
+for path in "$dir/os.sh" "$dir/keepalive.sh"
 do
 	# shellcheck disable=SC1090
-	[ -f "$file" ] && . "$file"
+	[ -f "$path" ] && . "$path"
 done
 
-tmutil destinationinfo | awk -f "${0%.sh}.awk"
-sudo tmutil thinlocalsnapshots / 1000000000 1 >/dev/null
+cleanup() {
+	tmutil currentphase | grep 'Copying' && tmutil stopbackup
+	sudo tmutil thinlocalsnapshots / 5000000000 2 >/dev/null
+} >&2
+
+trap cleanup INT EXIT QUIT TERM
+
+main() {
+	cleanup
+	tmutil destinationinfo |
+		awk -f "$dir"/color.awk -f "${0%.sh}.awk"
+}
+
+main "$@"
