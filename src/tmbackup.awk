@@ -2,6 +2,7 @@
 
 function eprint(type, msg, color) {
 	color == "" && color = red
+
 	printf("%s: %s\n", color type reset, msg) > "/dev/stderr"
 }
 
@@ -12,6 +13,7 @@ function mprint(msg, color, pre, post)  {
 
 function backup() {
 	mprint("Copying", blue)
+
 	cmd = "sudo tmutil startbackup -br -d \"" id "\" 2>&1"
 	while ((cmd | getline) > 0) {
 		if ($0 ~ "XPC error") {
@@ -24,6 +26,7 @@ function backup() {
 		}
 	}
 	close(cmd)
+
 	isempty = index($0, "0 bytes")
 	if (isempty > 0) {
 		mprint("Stopped", red, up clear)
@@ -70,10 +73,13 @@ BEGIN {
 /Name/ { name=$2 } /ID/ { id = $2 } /Mount Point/ { mount = $2 }
 /====/ && name && id {
 	try()
+
 	name = id = mount = copied = speed = ""
 }
 
 END {
-	(name && id) && try()
+	if (name && id)
+		try()
+
 	getlast()
 }
