@@ -10,7 +10,7 @@ connected drives.
 
 ### Features
 
-- _**Fast**_ 🚀 - minimal overhead, [tmbackup.awk](tmbackup.awk) executes in only ~ `15 ms`.
+- _**Fast**_ 🚀 - minimal overhead, [tmbackup.awk](src/tmbackup.awk) executes in only ~ `15 ms`.
 - _**Intuitive**_ 🎨 - seamless and user-friendly, with clear color-coded
   messages for every backup status.
 - _**Robust**_ 🔒 - ensures reliability with effective error handling during
