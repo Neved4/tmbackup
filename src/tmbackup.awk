@@ -61,7 +61,7 @@ BEGIN {
 
 	if (!(status ~ /BackupNotRunning/)) {
 		eprint("info", "Time Machine operation in progress: " \
-			bold green status reset, blue)
+			bold blue status reset, blue)
 		printf("%s\n", "Please run the script again later.")
 		exit 1
 	}

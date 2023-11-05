@@ -20,8 +20,9 @@ state() {
 cleanup() {
 	if ${start:-}
 	then
-		tmutil stopbackup
-		tmutil thinlocalsnapshots / 5000000000 2 >/dev/null
+		:
+		#tmutil stopbackup
+		#tmutil thinlocalsnapshots / 5000000000 2 >/dev/null
 	fi
 } >&2
 

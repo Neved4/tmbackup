@@ -37,17 +37,17 @@ $ ./tmbackup.sh
 
 |      Status | Meaning                                             |
 | ----------: | :-------------------------------------------------- |
-|   `green` 🟢 | _Ongoing action or finished successfully._          |
+|   `green` 🟢 | _Action finished successfully._                     |
 |     `red` 🔴 | _Action was interrupted or drive was disconnected._ |
 |  `yellow` 🟡 | _Warning demanding user attention._                 |
-|    `blue` 🔵 | _Backup status or general information._             |
+|    `blue` 🔵 | _Ongoing action or general information._            |
 | `magenta` 🟣 | _Miscellaneous information._                        |
 |    `gray` ⚪️ | _Backup drive or destination not available._        |
 
 ### Supported macOS Versions
 
-| Version               | Supported |
-| :-------------------- | :-------- |
+| Version                 | Supported |
+| :---------------------- | :-------- |
 | **`macOS 14 Sonoma`**   | Yes       |
 | **`macOS 13 Ventura`**  | Yes       |
 | **`macOS 12 Monterey`** | Yes       |
