@@ -123,7 +123,7 @@ thinlsnaps() {
 
 > [!IMPORTANT]
 > _`tmbackup` does not differentiate between backups interrupted by a
-> hardware failure and an user manual skip._
+> hardware failure and a user manually skipping._
 
 ## License
 
