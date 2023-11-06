@@ -38,10 +38,10 @@ $ ./tmbackup.sh
 
 | Version                 | Supported |
 | :---------------------- | :-------- |
-| **`macOS 14 Sonoma`**   | Yes       |
-| **`macOS 13 Ventura`**  | Yes       |
-| **`macOS 12 Monterey`** | Yes       |
-| **`macOS 11 Big Sur`**  | Yes       |
+| **`macOS 14 Sonoma`**   | Yes ✅     |
+| **`macOS 13 Ventura`**  | Yes ✅     |
+| **`macOS 12 Monterey`** | Yes ✅     |
+| **`macOS 11 Big Sur`**  | Yes ✅     |
 
 ### UX & Implementation
 
@@ -57,15 +57,15 @@ More information on this topic: [UX.md](doc/UX.md).
 > _`tmbackup` does not differentiate between backups interrupted by a
 > hardware failure and a user manually skipping._
 
+## Acknowledgments
+
+Thanks to [@risc] and [@goldbuick] for testing and feedback.
+
 ## License
 
 `tmbackup` is licensed under the terms of the [MIT License].
    
 See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Thanks to [@risc] and [@goldbuick] for testing and feedback.
 
 ## Related Projects
 
