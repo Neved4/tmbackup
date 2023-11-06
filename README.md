@@ -1,7 +1,7 @@
 ![Shell Script](https://img.shields.io/badge/Shell_Script-9DDE66?logo=gnubash&logoColor=000&style=for-the-badge)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=fff)
 
-# `tmbackup` - Backup all Time Machine drives! 🚀
+## `tmbackup` - Seamless Time Machine backups! 🚀
 
 Fast, light [macOS] utility that performs [Time Machine] backups on all
 connected drives.
@@ -10,12 +10,14 @@ connected drives.
 
 ### Highlights
 
-- 🚀 _**Fast**_ - minimal overhead, [tmbackup.awk](src/tmbackup.awk) executes in only ~ `15 ms`.
-- 🎨 _**Intuitive**_ - seamless and user-friendly, with clear color-coded
+- 🚀 _**Fast**_ - minimal overhead, [tmbackup.awk](src/tmbackup.awk)
+  executes in only ~ `15 ms`.
+- 🎨 _**Intuitive**_ - user-friendly, clear color-coded
   messages for every backup status.
-- 🔒 _**Robust**_ - ensures reliability with effective error handling during
-  the backup.
-- 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`, `sh` in `3686 bytes`, `188 lines`.
+- 🔒 _**Robust**_ - ensures reliability with effective error handling
+  during the backup.
+- 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`,
+  `sh` (`3686 bytes`, `188 lines`).
 
 ## Getting Started
 
