@@ -8,6 +8,8 @@ connected drives.
 
 ![](graphics/tmbackup.gif)
 
+###### Generated using [`agg`], [`asciinema`], `Menlo` typeface, theme `Github Dark`.
+
 ### Highlights
 
 - 🚀 _**Fast**_ - minimal overhead, [tmbackup.awk](src/tmbackup.awk)
@@ -83,6 +85,8 @@ See the [LICENSE](LICENSE) file for details.
   doing
 - [tomtaylor/fix_timemachine] - fix broken Time Machine NAS backups
 
+[`agg`]: https://github.com/asciinema/agg
+[`asciinema`]: https://github.com/asciinema/asciinema
 [macOS]: https://www.apple.com/macos/
 [MIT License]: https://opensource.org/license/mit/
 [Time Machine]: https://support.apple.com/en-gb/guide/mac-help/mh35860/14.0/mac/14.0
