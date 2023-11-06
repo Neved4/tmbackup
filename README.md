@@ -8,13 +8,14 @@ connected drives.
 
 ![](graphics/tmbackup.gif)
 
-### Features
+### Highlights
 
-- _**Fast**_ 🚀 - minimal overhead, [tmbackup.awk](src/tmbackup.awk) executes in only ~ `15 ms`.
-- _**Intuitive**_ 🎨 - seamless and user-friendly, with clear color-coded
+- 🚀 _**Fast**_ - minimal overhead, [tmbackup.awk](src/tmbackup.awk) executes in only ~ `15 ms`.
+- 🎨 _**Intuitive**_ - seamless and user-friendly, with clear color-coded
   messages for every backup status.
-- _**Robust**_ 🔒 - ensures reliability with effective error handling during
+- 🔒 _**Robust**_ - ensures reliability with effective error handling during
   the backup.
+- 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`, `sh` in `3686 bytes`, `188 lines`.
 
 ## Getting Started
 
@@ -33,17 +34,6 @@ git clone https://github.com/Neved4/tmbackup
 $ ./tmbackup.sh
 ```
 
-#### Status codes
-
-|      Status | Meaning                                             |
-| ----------: | :-------------------------------------------------- |
-|   `green` 🟢 | _Action finished successfully._                     |
-|     `red` 🔴 | _Action was interrupted or drive was disconnected._ |
-|  `yellow` 🟡 | _Warning demanding user attention._                 |
-|    `blue` 🔵 | _Ongoing action or general information._            |
-| `magenta` 🟣 | _Miscellaneous information._                        |
-|    `gray` ⚪️ | _Backup drive or destination not available._        |
-
 ### Supported macOS Versions
 
 | Version                 | Supported |
@@ -53,11 +43,18 @@ $ ./tmbackup.sh
 | **`macOS 12 Monterey`** | Yes       |
 | **`macOS 11 Big Sur`**  | Yes       |
 
-### UX & Implementation
+### Status codes
 
-> [!NOTE]
-> _If you have any cool ideas or suggestions to improve things, let me
-> know!_
+|      Status | Meaning                                             |
+| ----------: | :-------------------------------------------------- |
+|   `green` 🟢 | _Backup finished successfully._                     |
+|     `red` 🔴 | _Backup was interrupted or drive was disconnected._ |
+|  `yellow` 🟡 | _Warning demanding user attention._                 |
+|    `blue` 🔵 | _Ongoing backup or general information._            |
+| `magenta` 🟣 | _Miscellaneous information._                        |
+|    `gray` ⚪️ | _Backup drive or destination not available._        |
+
+### UX & Implementation
 
 Simplifying the script into terse functions is possible, but `tmbackup`
 prioritizes an intuitive and user-friendly approach. The goal is that at
@@ -79,11 +76,11 @@ Avg speed:    0.00 MB/min (0 bytes/sec)
 
 Compare it to `tmbackup`'s output instead:
 ```log
-Complete 4F4B520B-C151-485D-8CD9-6EB53E8FAAE4 (Backup 1)
-         Total copied: 69.34 MB (72704000 bytes)
-            Avg speed: 74.97 MB/min (1310283 bytes/sec)
- Offline CF9A4D94-2A57-40A1-B843-A8DA64A5858D (Backup 2)
- Stopped F49B059C-5944-49C9-A96D-53DCDF07EFC6 (Backup 3)
+Complete: 4F4B520B-C151-485D-8CD9-6EB53E8FAAE4 (Backup 1)
+          Total copied: 69.34 MB (72704000 bytes)
+             Avg speed: 74.97 MB/min (1310283 bytes/sec)
+ Offline: CF9A4D94-2A57-40A1-B843-A8DA64A5858D (Backup 2)
+ Stopped: F49B059C-5944-49C9-A96D-53DCDF07EFC6 (Backup 3)
 ```
 
 When UX isn't a priority, you can create your own custom functions
