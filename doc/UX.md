@@ -11,6 +11,9 @@
 
 ### UX & Implementation
 
+> [!TIP]
+> _`tmbackup` performs a local snapshot every time it's called. This has the potential of creating many local snapshots, that `tmbackup` automatically attempts to trim without removing them. If you know what you're doing, and want to remove the extra snapshots, you could schedule something like `rmlsnaps()` below._
+
 Simplifying the script into terse functions is possible, but `tmbackup`
 prioritizes an intuitive and user-friendly approach. The goal is that at
 any point in time, users have a clear picture of the state of their
