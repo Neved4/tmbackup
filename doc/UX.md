@@ -12,16 +12,18 @@
 ### UX & Implementation
 
 > [!TIP]
-> _`tmbackup` performs a local snapshot every time it's called. This has the potential of creating many local snapshots, that `tmbackup` automatically attempts to trim without removing them. If you know what you're doing, and want to remove the extra snapshots, you could schedule something like `rmlsnaps()` below._
+> _Over time, `tmbackup` generates numerous local snapshots that will be
+> trimmed but not removed. If you know what you're doing, you can remove
+> local snapshots by scheduling `rmlsnaps()`._
 
 Simplifying the script into terse functions is possible, but `tmbackup`
 prioritizes an intuitive and user-friendly approach. The goal is that at
 any point in time, users have a clear picture of the state of their
 backups.
 
-Restructuring it into functions may lead to confusion. One notable
-example is the default behavior of `tmutil startbackup`. See the output of
-`tmback()` below:
+Restructuring it into functions may lead to confusion. One notable example
+is the default behavior of `tmutil startbackup`. See `tmback()`'s output
+below:
 
 ```log
 Total copied: 0.00 MB (0 bytes)
@@ -73,4 +75,5 @@ thinlsnaps() {
 ```
 
 > [!TIP]
-> _These functions are provided as standalone scripts in [`utils/`](utils/)._
+> _These functions are provided as standalone scripts in
+> [`utils/`](utils/)._
