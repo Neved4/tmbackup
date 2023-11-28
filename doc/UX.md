@@ -72,4 +72,5 @@ thinlsnaps() {
 }
 ```
 
-###### * These are provided as standalone scripts in [`utils/`](utils/).
+> [!TIP]
+> _These functions are provided as standalone scripts in [`utils/`](utils/)._
