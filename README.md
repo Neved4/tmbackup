@@ -52,9 +52,11 @@ $ ./tmbackup.sh
 <details closed>
   <summary><b>Supported Awk and UNIX shells</b></summary>
 
-`tmbackup` is built for [macOS] using `/bin/sh` and `/usr/bin/awk`, but it adheres to standards when possible and is made to play nice with other Awk and POSIX sh versions too.
+`tmbackup` is built for [macOS] using `/bin/sh` and `/usr/bin/awk`, but it
+adheres to standards when possible and is made to play nice with other Awk
+and POSIX sh versions too.
 
-This allows to execute `tmbackup` with a different shells:
+This allows to execute `tmbackup` with different shells:
 ```sh
 dash /path/to/tmbackup.sh
 ```
@@ -85,7 +87,7 @@ tmutil destinationinfo | mawk -f /path/to/tmbackup.awk
 |   [`osh`] | `0.18.0`      | ✅ Yes     |
 |  [`posh`] | `0.14.1`      | ❌ No      |
 |  [`yash`] | `2.55`        | ✅ Yes     |
-|   [`zsh`] | `5.9`         | ❌ No      |
+|   [`zsh`] | `5.9`         | ✅ Yes      |
 
 </details>
 
