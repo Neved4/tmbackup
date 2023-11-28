@@ -38,7 +38,9 @@ git clone https://github.com/Neved4/tmbackup
 $ ./tmbackup.sh
 ```
 
-### Supported macOS Versions
+### Compatibility
+
+#### Supported macOS Versions
 
 | Version                 | Supported |
 | :---------------------- | :-------- |
@@ -46,6 +48,46 @@ $ ./tmbackup.sh
 | **`macOS 13 Ventura`**  | Yes ✅     |
 | **`macOS 12 Monterey`** | Yes ✅     |
 | **`macOS 11 Big Sur`**  | Yes ✅     |
+
+<details closed>
+  <summary><b>Supported Awk and UNIX shells</b></summary>
+
+`tmbackup` is built for [macOS] using `/bin/sh` and `/usr/bin/awk`, but it adheres to standards when possible and is made to play nice with other Awk and POSIX sh versions too.
+
+This allows to execute `tmbackup` with a different shells:
+```sh
+dash /path/to/tmbackup.sh
+```
+
+Or to build your own parsing with different Awk implementations:
+```sh
+tmutil destinationinfo | mawk -f /path/to/tmbackup.awk
+```
+
+#### Supported Awk implementations
+
+|     Shell | Version          | Supported |
+| --------: | :--------------- | :-------- |
+|   [`awk`] | `20230909`       | ✅ Yes     |
+|  [`gawk`] | `5.3.0`          | ✅ Yes     |
+| [`goawk`] | `1.25.0`         | ✅ Yes     |
+|  [`mawk`] | `1.3.4-20231126` | ✅ Yes     |
+
+#### Supported shells
+
+|     Shell | Version       | Supported |
+| --------: | :------------ | :-------- |
+|  [`bash`] | `5.2.15`      | ✅ Yes     |
+|  [`dash`] | `0.5.12`      | ✅ Yes     |
+| [`ksh93`] | `93u+m/1.0.7` | ✅ Yes     |
+|  [`mksh`] | `59c`         | ✅ Yes     |
+|  [`oksh`] | `7.3`         | ✅ Yes     |
+|   [`osh`] | `0.18.0`      | ✅ Yes     |
+|  [`posh`] | `0.14.1`      | ❌ No      |
+|  [`yash`] | `2.55`        | ✅ Yes     |
+|   [`zsh`] | `5.9`         | ❌ No      |
+
+</details>
 
 ### UX & Implementation
 
@@ -92,6 +134,21 @@ See the [LICENSE](LICENSE) file for details.
 [Time Machine]: https://support.apple.com/en-gb/guide/mac-help/mh35860/14.0/mac/14.0
 [@goldbuick]: https://github.com/goldbuick
 [@risc]: https://github.com/0risc
+
+[`awk`]: https://www.cs.princeton.edu/~bwk/btl.mirror/
+[`gawk`]: https://www.gnu.org/software/gawk/
+[`goawk`]: https://benhoyt.com/writings/goawk/
+[`mawk`]: https://invisible-island.net/mawk/
+
+[`bash`]: https://git.savannah.gnu.org/cgit/bash.git/
+[`dash`]: https://git.kernel.org/pub/scm/utils/dash/dash.git
+[`ksh93`]: https://github.com/ksh93/ksh
+[`mksh`]: https://github.com/MirBSD/mksh
+[`osh`]: https://www.oilshell.org/cross-ref.html?tag=OSH#OSH
+[`oksh`]: https://github.com/ibara/oksh
+[`posh`]: https://salsa.debian.org/clint/posh
+[`yash`]: https://github.com/magicant/yash
+[`zsh`]: https://github.com/zsh-users/zsh
 
 [matteocorti/tmstatus.sh]: https://github.com/matteocorti/tmstatus.sh
 [torstenvl/tmutils]: https://github.com/torstenvl/tmutils
