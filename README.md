@@ -18,7 +18,7 @@ connected drives.
   messages for every backup status.
 - 🔒 _**Robust**_ - ensures reliability with effective error handling
   during the backup.
-- 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`,
+- 📦 _**Self-contained**_ - no dependencies, lighweight, uses POSIX `awk`,
   `sh` (`3686 bytes`, `188 lines`).
 
 ## Getting Started
@@ -107,7 +107,7 @@ More information on this topic: [UX.md](doc/UX.md).
 
 ## Acknowledgments
 
-Thanks to [@risc] and [@goldbuick] for testing and feedback.
+Thanks to [@0risc] and [@goldbuick] for testing and feedback.
 
 ## License
 
@@ -135,7 +135,7 @@ See the [LICENSE](LICENSE) file for details.
 [MIT License]: https://opensource.org/license/mit/
 [Time Machine]: https://support.apple.com/en-gb/guide/mac-help/mh35860/14.0/mac/14.0
 [@goldbuick]: https://github.com/goldbuick
-[@risc]: https://github.com/0risc
+[@0risc]: https://github.com/0risc
 
 [`awk`]: https://www.cs.princeton.edu/~bwk/btl.mirror/
 [`gawk`]: https://www.gnu.org/software/gawk/
