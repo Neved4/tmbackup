@@ -18,8 +18,8 @@ connected drives.
   messages for every backup status.
 - 🔒 _**Robust**_ - ensures reliability with effective error handling
   during the backup.
-- 📦 _**Self-contained**_ - no dependencies, lighweight, uses POSIX `awk`,
-  `sh` (`3686 bytes`, `188 lines`).
+- 📦 _**Self-contained**_ - no dependencies, lightweight, uses POSIX `awk`,
+  `sh` (`3692 bytes`, `189 lines`).
 
 ## Getting Started
 
