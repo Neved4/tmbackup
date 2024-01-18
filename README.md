@@ -19,7 +19,7 @@ connected drives.
 - 🔒 _**Robust**_ - ensures reliability with effective error handling
   during the backup.
 - 📦 _**Self-contained**_ - no dependencies, lightweight, uses POSIX `awk`,
-  `sh` (`3692 bytes`, `189 lines`).
+  `sh` (`3689 bytes`, `190 lines`).
 
 ## Getting Started
 

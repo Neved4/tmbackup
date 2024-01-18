@@ -18,7 +18,10 @@ function backup() {
 	while ((cmd | getline) > 0) {
 		if ($0 ~ "XPC error") {
 			eprint("Error", "Connection interrupted or invalid")
-		} else if ($0 ~ "(Total copied|Avg speed)") {
+			continue
+		}
+
+		if ($0 ~ "(Total copied|Avg speed)") {
 			sub(/:    /, ": ", $0)
 			gsub(/[0-9]+\.*[0-9]* MB|[0-9]+\.*[0-9]* MB\/min/,
 				bold green "&" reset)
@@ -53,7 +56,7 @@ function getlast() {
 }
 
 function try() {
-	mount == "" ? mprint("Offline", gray) : backup()
+	!(mount) ? mprint("Offline", gray) : backup()
 }
 
 BEGIN {

@@ -9,7 +9,7 @@ do
 	[ -f "$path" ] && . "$path"
 done
 
-checkstate() {
+status() {
 	status=$(tmutil currentphase)
 	case $status in
 	BackupNotRunning)
@@ -28,7 +28,7 @@ cleanup() {
 trap cleanup INT EXIT QUIT TERM
 
 main() {
-	checkstate
+	status
 	tmutil destinationinfo |
 		awk -f "$dir"/color.awk -f "$dir"/os.awk -f "${0%.sh}.awk"
 }
