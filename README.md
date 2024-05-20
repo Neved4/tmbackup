@@ -56,10 +56,11 @@ tmbackup | tee -a /path/to/output.log
 | **`macOS 11 Big Sur`**  | Yes ✅     |
 
 <details closed>
-  <summary><b>Supported Awk and UNIX shells</b></summary>
+<summary><b>Supported Awk and UNIX shells</b></summary>
+<br>
 
-`tmbackup` is built for [macOS] using `/bin/sh` and `/usr/bin/awk`, but it
-adheres to standards when possible and is made to play nice with other Awk
+`tmbackup` is built for `macOS` using `/bin/sh` and `/usr/bin/awk`. It
+adheres to standards when possible, and is made to play nicely with other Awk
 and POSIX sh versions too.
 
 This allows to execute `tmbackup` with different shells:
