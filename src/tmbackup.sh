@@ -1,36 +1,41 @@
 #!/bin/sh
 set -Cefu
 
-dir="${0%/*}"
+keepalive() {
+	sudo -v
+	while true
+	do
+		sudo -n true && sleep 60
+		kill -0 "$$" || exit
+	done 2>/dev/null &
+}
 
-for path in $dir/keepalive.sh
-do
-	# shellcheck disable=SC1090
-	[ -f "$path" ] && . "$path"
-done
+main() {
+	dir="${0%/*}"
+	readonly cmd='/usr/bin/tmutil'
+
+	keepalive
+	status
+
+	tmutil destinationinfo |
+		awk -f "$dir"/color.awk -f "$dir"/os.awk -f "${0%.sh}.awk"
+}
 
 status() {
-	status=$(tmutil currentphase)
+	status=$($cmd currentphase)
 	case $status in
-	BackupNotRunning)
-		start="true" ;;
+	BackupNotRunning) start="true" ;;
 	esac
 }
 
 cleanup() {
 	if ${start:-}
 	then
-		tmutil stopbackup
-		tmutil thinlocalsnapshots / 5000000000 2 >/dev/null
+		$cmd stopbackup
+		$cmd thinlocalsnapshots / 5000000000 2 >/dev/null
 	fi
 } >&2
 
 trap cleanup INT EXIT QUIT TERM
-
-main() {
-	status
-	tmutil destinationinfo |
-		awk -f "$dir"/color.awk -f "$dir"/os.awk -f "${0%.sh}.awk"
-}
 
 main "$@"
