@@ -13,7 +13,7 @@ connected drives.
 ### Highlights
 
 - 🚀 _**Fast**_ - minimal overhead, [tmbackup.awk](src/tmbackup.awk)
-  executes in only ~ `15 ms`.
+  executes in only ~ `15 ms`.[^1]
 - 🎨 _**Intuitive**_ - user-friendly, clear color-coded
   messages for every backup status.
 - 🔒 _**Robust**_ - ensures reliability with effective error handling
@@ -28,14 +28,20 @@ connected drives.
 
 ### Installation
 
+Install it with [`brew`]:
 ```sh
-git clone https://github.com/Neved4/tmbackup
+$ brew install Neved4/tap/tmbackup
 ```
 
 ### Usage
 
-```console
+```sh
 $ ./tmbackup.sh
+```
+
+#### Logging
+```sh
+tmbackup | tee -a /path/to/output.log
 ```
 
 ### Compatibility
@@ -129,8 +135,14 @@ See the [LICENSE](LICENSE) file for details.
   doing
 - [tomtaylor/fix_timemachine] - fix broken Time Machine NAS backups
 
+
+[^1]: Tested with [`hyperfine`].
+
 [`agg`]: https://github.com/asciinema/agg
 [`asciinema`]: https://github.com/asciinema/asciinema
+[`hyperfine`]: https://github.com/sharkdp/hyperfine
+[`brew`]: https://brew.sh/
+
 [macOS]: https://www.apple.com/macos/
 [MIT License]: https://opensource.org/license/mit/
 [Time Machine]: https://support.apple.com/en-gb/guide/mac-help/mh35860/14.0/mac/14.0
