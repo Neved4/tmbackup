@@ -28,7 +28,7 @@ connected drives.
 
 ### Installation
 
-Install it with [`brew`]:
+If you have [`brew`] installed, just run:
 ```sh
 $ brew install Neved4/tap/tmbackup
 ```
