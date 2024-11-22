@@ -18,7 +18,7 @@ main() {
 	status
 
 	tmutil destinationinfo |
-		awk -f "$dir"/color.awk -f "$dir"/os.awk -f "${0%.sh}.awk"
+		awk -f "$dir"/esc.awk -f "$dir"/os.awk -f "${0%.sh}.awk"
 }
 
 status() {
